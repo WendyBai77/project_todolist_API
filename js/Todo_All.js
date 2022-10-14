@@ -500,49 +500,6 @@ function deleteAll(e){
 }
 
 
-
-/*
-//刪除所有已完成
-function deleteAll(e) {
-    console.log(e);
-    let needDelete = [];
-    //將listData運算、判斷(已完成狀態,i.completed_at有資料(代表已勾選)為true)，篩選出需刪除項目
-    needDelete = listData.map(function (i) {
-        if (i.completed_at) {
-            console.log('i.completed_at',i.completed_at);
-            url = `${domain}/todos/${i.id}`
-            return axios.delete(url, {
-                headers: {
-                    Authorization: localStorage.getItem("token")
-                }
-            })
-        }
-        console.log('.map > if (i.completed_at) needDelete',needDelete);
-    })
-    needDelete = listData.filter( i => i !== undefined);
-    console.log('.filter>needDelete',needDelete);
-
-    //先直接更新已請求過的資料並渲染。篩選出待完成事項
-    listData = listData.filter(i => !i.completed_at);
-    //為了在渲染的時候顯示全部的內容
-    tabStatus = "all";
-    render(listData);
-
-    Promise.all(needDelete)
-        .then((res) => {
-            console.log("deleteAll", res);
-            Swal.fire({
-                icon: 'success',
-                title: '刪除完成',
-            })
-        })
-        .catch((error) => {
-            let reason = error.response.data.error ? error.response.data.error : "";
-            alert(error.response.data.message + "　" + reason);
-            requestData();
-        });
-}
-*/
 //切換tab
 function changeTab(e) {
     switch (e.target.textContent) {
