@@ -1,0 +1,14 @@
+//變數
+@import "variable";
+//所有全域變數與mixin(透過@mixin將常用語法記錄起來，需使用時再呼叫)
+@import "mixin";
+//css reset
+@import "reset";
+//全站設定
+@import "base";
+// 頁面
+@import "index";
+@import "main";
+
+//字體
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700&family=Noto+Sans+TC:wght@100;400;700&display=swap");

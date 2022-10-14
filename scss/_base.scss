@@ -1,0 +1,49 @@
+// personal cssReset
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+body{
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 700;
+    color: $black;
+    font-family: $fontCHI;
+}
+a {
+    display: block;
+    text-decoration: none;
+    color: $black;
+}
+
+button {
+    display: block;
+    appearance: none;
+    background: $black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 48px;
+    height: 47px;
+    font-size: 16px;
+    cursor: pointer;
+    &:active{
+        transform: scale(.95);
+    }
+}
+input{
+    display: block;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    height: 47px;
+    font-family: $fontCHI;
+    font-weight: 700;
+    &::placeholder{
+        color: $grey;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+label{
+    display: block;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上待辦清單 JS_Todo List (登入/註冊)</title>
+    <link rel="icon" href="img/334674_memori_logo_network_social_star_icon.png" />
+    <meta name="description" content="JS_todolist">
+    <!-- FB標籤 -->
+    <meta property="og:title" content="最實用的待辦清單服務 Online Todo List" />
+    <meta property="og:description" content="Online Todo List 提供日常工作效率" />
+    <meta property="og:url" content="https://www.google.com.tw" />
+    <meta property="og:type" content="website" /> <!-- FB內容的媒體類型 -->
+    <meta property="og:image" content="img/334674_memori_logo_network_social_star_icon.png" />
+    <link rel="apple-touch-icon" href="img/334674_memori_logo_network_social_star_icon.png" />
+    <meta property="og:image:type" content="png" />
+    <meta property="og:image:width" content="224" />
+    <meta property="og:image:height" content="50" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <link rel="stylesheet" href="./css/Todo_All.css">
+
+</head>
+<body>
+    <div class="indexWrap">
+        <div class="indexContainer">
+            <div class="title">
+                <h1><a href="#">Online Todo List</a><a href="#">ONLINE TODO LIST</a></h1>
+                <img src="./img/main.png" alt="待辦事項插圖">
+            </div>
+            <section class="login">
+                <h2>最實用的線上待辦事項服務</h2>
+                <form>
+                    <label for="ID">Email</label>
+                    <input type="email" id="ID" placeholder="請輸入Email"  required>
+                    <label for="nickName">您的暱稱</label>
+                    <input type="text" id="nickName" placeholder="請輸入您的暱稱" title="中英皆可">
+                    <label for="PWD">密碼</label>
+                    <input type="password" id="PWD" placeholder="請輸入密碼" title="密碼不得少於6個字元" required>
+                    <p class="PWD"></p>
+                    <label for="PWDAgain">再次輸入密碼</label>
+                    <input type="password" id="PWDAgain" placeholder="請再次輸入密碼" title="密碼不得少於6個字元">
+                    <p class="PWDAgain"></p>
+                <button type="submit">登入</button>
+            </form>
+                <a href="#" title="註冊帳號">註冊帳號</a>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/Todo_All.js"></script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700&family=Noto+Sans+TC:wght@100;400;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #333333;
+}
+
+button {
+  display: block;
+  appearance: none;
+  background: #333333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 48px;
+  height: 47px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.95);
+}
+
+input {
+  display: block;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  height: 47px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+}
+input::placeholder {
+  color: #9F9A91;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+label {
+  display: block;
+}
+
+.indexWrap {
+  background: #ffdfd8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexContainer {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 576px) {
+  .indexContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.title h1 {
+  text-align: center;
+  margin-bottom: 18.14px;
+}
+.title a {
+  display: inline-block;
+  vertical-align: middle;
+}
+.title a:first-of-type {
+  width: 40px;
+  height: 40px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url("/img/checkBox.svg");
+  background-size: contain;
+}
+.title a:last-of-type {
+  font-family: "Baloo Thambi 2", cursive;
+  font-size: 32px;
+  margin-left: 1.6px;
+}
+.title img {
+  width: 100%;
+}
+@media (max-width: 576px) {
+  .title img {
+    display: none;
+  }
+}
+
+section.login {
+  margin-left: 8.2%;
+  max-width: 304px;
+  flex: 1 0 auto;
+}
+section.login h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+section.login label {
+  margin-bottom: 4px;
+}
+section.login label:nth-of-type(2n) {
+  display: none;
+}
+section.login input {
+  width: 100%;
+  margin-bottom: 40px;
+}
+section.login input:nth-of-type(3) {
+  margin-bottom: 0;
+}
+section.login input:nth-of-type(2n) {
+  display: none;
+}
+section.login p {
+  color: #D87355;
+  height: 20px;
+}
+section.login p:nth-of-type(2n) {
+  display: none;
+}
+section.login button {
+  margin: 24px auto 14px;
+}
+section.login a {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: fit-content;
+  margin: 0 auto;
+  border-bottom: 1px solid transparent;
+}
+section.login a:active {
+  border-bottom: 1px solid #333333;
+}
+@media (max-width: 576px) {
+  section.login {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  section.login h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+  section.login button {
+    margin: 27px auto 10px;
+  }
+}
+
+section.register label:nth-of-type(2n) {
+  display: block;
+}
+section.register input {
+  margin-bottom: 16px;
+}
+section.register input:nth-of-type(3), section.register input:nth-of-type(4) {
+  margin-bottom: 0;
+}
+section.register input:nth-of-type(2n) {
+  display: block;
+}
+section.register p {
+  margin-bottom: 0;
+  height: 16px;
+}
+section.register p:nth-of-type(2n) {
+  display: block;
+}
+@media (max-width: 576px) {
+  section.register h2 {
+    font-size: 24px;
+  }
+}
+
+.mainWrap {
+  background-image: linear-gradient(174deg, #ffdfd8 53%, #FFFFFF 53%);
+}
+
+.mainContainer {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 27px 19px 34px;
+}
+header a {
+  display: inline-block;
+  vertical-align: middle;
+}
+header a:first-of-type {
+  width: 33px;
+  height: 33px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url("/img/checkBox.svg");
+  background-size: contain;
+}
+header a:last-of-type {
+  font-family: "Baloo Thambi 2", cursive;
+  font-size: 24px;
+  margin-left: 3px;
+}
+header h2 {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 19px;
+}
+header button {
+  display: inline-block;
+  background: transparent;
+  color: #333333;
+  padding: 5px;
+  height: 100%;
+  font-weight: 900;
+  border-radius: 0;
+}
+@media (max-width: 576px) {
+  header {
+    padding-left: 32px;
+  }
+  header h2 {
+    display: none;
+  }
+}
+
+main {
+  padding: 0 32px;
+}
+
+.inputArea {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  border-radius: 10px;
+  background: white;
+  padding: 4px;
+  margin: 0 auto 16px;
+  height: 47px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+.inputArea input {
+  width: calc(100% - 40px);
+}
+.inputArea input:focus-visible {
+  outline: 0;
+}
+.inputArea button {
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  background-image: url("/img/plus.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.listArea {
+  display: none;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+.listArea .tab {
+  display: flex;
+  background: white;
+  border-radius: 10px 10px 0 0;
+}
+.listArea .tab li {
+  width: 33.3333333333%;
+  padding: 15px 0;
+  color: #9F9A91;
+  text-align: center;
+  border-bottom: 2px solid #efefef;
+  cursor: pointer;
+}
+.listArea .tab li:hover, .listArea .tab li.active {
+  color: #333333;
+  border-bottom: 2px solid #333333;
+}
+
+.emptyArea {
+  display: none;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.emptyArea p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 33px 0 16px;
+}
+
+.listContent {
+  background: white;
+  border-radius: 0 0 10px 10px;
+}
+.listContent .list {
+  padding: 24px 48px 0 24px;
+}
+.listContent .list li {
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+}
+@media (max-width: 576px) {
+  .listContent .list {
+    padding: 24px 16px 0;
+  }
+}
+.listContent input[type=checkbox] {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.listContent input[type=checkbox]:checked + label {
+  text-decoration: line-through #9F9A91;
+  color: #9F9A91;
+}
+.listContent input[type=checkbox]:checked + label::before {
+  content: url("/img/checkYellow.png");
+  border: 1px solid transparent;
+  transform: translateY(-80%);
+}
+.listContent label {
+  font-weight: 400;
+  line-height: 52px;
+  cursor: pointer;
+}
+.listContent label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  border: 1px solid #9F9A91;
+  border-radius: 5px;
+  vertical-align: text-bottom;
+  cursor: pointer;
+}
+.listContent label .input_ok {
+  display: inline-block;
+  border: none;
+  outline: 1px solid #0C7D74;
+  color: #FF4858;
+  border-radius: 10px;
+  padding: 10px 10px;
+  height: 47px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  width: calc(100% - 20px);
+}
+@media (max-width: 576px) {
+  .listContent label .input_ok {
+    right: 40px;
+  }
+}
+.listContent label .update_ok {
+  background: #FFAE00;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 40px;
+  padding: 0 7px;
+  cursor: pointer;
+  font-weight: 500;
+}
+@media (max-width: 576px) {
+  .listContent label .update_ok {
+    right: 40px;
+  }
+}
+.listContent label span {
+  width: calc(100% - 150px);
+  display: inline-block;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+.list .update {
+  background: orangered;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 40px;
+  padding: 0 7px;
+  cursor: pointer;
+  opacity: 0.2;
+}
+.list .update:hover {
+  opacity: 1;
+}
+@media (max-width: 576px) {
+  .list .update {
+    right: 40px;
+  }
+}
+.list .button_none {
+  display: none;
+}
+.list .delete {
+  background: url("/img/cross.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 50%;
+  right: -35px;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 100%;
+  padding: 0 20px;
+  cursor: pointer;
+  opacity: 0.2;
+}
+.list .delete:hover {
+  opacity: 1;
+}
+@media (max-width: 576px) {
+  .list .delete {
+    right: 0px;
+  }
+}
+
+.listFooter {
+  display: flex;
+  padding: 25px 48px 32px 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+.listFooter h3 {
+  font-weight: 400;
+}
+.listFooter button {
+  background: transparent;
+  color: #9F9A91;
+  padding: 5px;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 0;
+}
+@media (max-width: 576px) {
+  .listFooter {
+    padding: 25px 16px 24px;
+  }
+}
+
+.show {
+  display: block;
+}/*# sourceMappingURL=Todo_All.css.map */
