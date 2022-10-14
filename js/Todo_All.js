@@ -158,7 +158,7 @@ function loginRegister(e) {
                 title: res.data.message,
                 text: `${res.data.nickname}，你好！`
             })
-                .then(() => window.location = "/Todo_main.html");
+                .then(() => window.location = "project_todolist_API/Todo_main.html");
             // console.log(token);
         })
         .catch((error) => {
@@ -187,7 +187,7 @@ function logout() {
         }).then(() => {
             //將storage 中的所有屬性移除。
             localStorage.clear();
-            window.location = "/Todo_index.html";
+            window.location = "project_todolist_API/Todo_index.html";
         })
 
     }).catch((error) => {
@@ -226,7 +226,7 @@ function requestData() {
                 icon: 'warning',
                 title: error.response.data.message,
                 text: '轉至登入頁面'
-            }).then(() => window.location = "/Todo_index.html");
+            }).then(() => window.location = "project_todolist_API/Todo_index.html");
         })
 }
 // 渲染資料
@@ -498,7 +498,6 @@ function deleteAll(e){
     });
     
 }
-
 
 //切換tab
 function changeTab(e) {
