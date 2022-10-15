@@ -26,17 +26,18 @@ const deleteAllBTN = document.querySelector(".listFooter button");
 //切換tab(全部/待完成/已完成)用
 const tabArea = document.querySelector(".listArea .tab");
 
-
 //判斷頁面+監聽事件
 // 當前頁面為[登入頁](註冊頁同頁做切換)。 .includes()可回傳是否包含該元素的布林值
 if (sitePath.includes("index")) {
+    console.log('sitePath_location.pathname',sitePath);
     change_a.addEventListener("click", changeText);
     form.addEventListener("submit", loginRegister);
     PWD.addEventListener("keyup", checkPWD);
     PWDAgain.addEventListener("keyup", checkPWDAgain);
 }
-// 當前頁面為[todolist內頁](location.pathname為"/project_todolist_API/main.html")
+// 當前頁面為[todolist內頁](location.pathname為"/main.html")
 else {
+    console.log('sitePath_location.pathname',sitePath);
     //顯示暱稱。使用getItem 把存進去的字串用key名"nickName"取出來。
     const headerNickName = document.querySelector("header h2");
     headerNickName.textContent = `${localStorage.getItem("nickName")}的待辦`;
@@ -50,7 +51,8 @@ else {
     tabArea.addEventListener("click", changeTab);
     //初次渲染_顯示todolist(get todolist)
     requestData();
-};
+}
+
 
 //登入註冊頁面內容切換
 function changeText() {
@@ -158,7 +160,7 @@ function loginRegister(e) {
                 title: res.data.message,
                 text: `${res.data.nickname}，你好！`
             })
-                .then(() => window.location = "/main.html");
+                .then(() => window.location = "/project_todolist_API/main.html");
             // console.log(token);
         })
         .catch((error) => {
@@ -187,7 +189,7 @@ function logout() {
         }).then(() => {
             //將storage 中的所有屬性移除。
             localStorage.clear();
-            window.location = "/index.html";
+            window.location = "/project_todolist_API/index.html";
         })
 
     }).catch((error) => {
@@ -226,7 +228,7 @@ function requestData() {
                 icon: 'warning',
                 title: error.response.data.message,
                 text: '轉至登入頁面'
-            }).then(() => window.location = "/index.html");
+            }).then(() => window.location = "/project_todolist_API/index.html");
         })
 }
 // 渲染資料
