@@ -36,7 +36,7 @@
             width: 40px;
             height: 40px;
             @include linkImg;
-            background-image: url("/img/checkBox.svg");
+            background-image: url("../img/checkBox.svg");
             background-size: contain;
         }
 

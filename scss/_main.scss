@@ -22,7 +22,7 @@ header {
             width: 33px;
             height: 33px;
             @include linkImg;
-            background-image: url("/img/checkBox.svg");
+            background-image: url("../img/checkBox.svg");
             background-size: contain;
         }
 
@@ -86,7 +86,7 @@ main {
         height: 40px;
         width: 40px;
         padding: 10px;
-        background-image: url("/img/plus.png");
+        background-image: url("../img/plus.png");
         background-position: center center;
         background-repeat: no-repeat;
     }
@@ -170,7 +170,7 @@ main {
                 color: $grey;
 
                 &::before {
-                    content: url("/img/checkYellow.png");
+                    content: url("../img/checkYellow.png");
                     border: 1px solid transparent;
                     //偽元素_核取方塊和偽元素_勾勾會"一起往上推"(針對Y軸平移)
                     transform: translateY(-80%);
@@ -234,6 +234,8 @@ main {
             display: inline-block;
             line-height: 24px;
             vertical-align: middle;
+            // 文字自動換行，長英文字不切斷
+            word-wrap: break-word;
         }
 
     }
@@ -266,7 +268,7 @@ main {
     }
 
     .delete {
-        background: url("/img/cross.png");
+        background: url("../img/cross.png");
         background-repeat: no-repeat;
         background-position: center center;
         position: absolute;

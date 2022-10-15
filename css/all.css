@@ -144,7 +144,7 @@ label {
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
-  background-image: url("/img/checkBox.svg");
+  background-image: url("../img/checkBox.svg");
   background-size: contain;
 }
 .title a:last-of-type {
@@ -274,7 +274,7 @@ header a:first-of-type {
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
-  background-image: url("/img/checkBox.svg");
+  background-image: url("../img/checkBox.svg");
   background-size: contain;
 }
 header a:last-of-type {
@@ -330,7 +330,7 @@ main {
   height: 40px;
   width: 40px;
   padding: 10px;
-  background-image: url("/img/plus.png");
+  background-image: url("../img/plus.png");
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -403,7 +403,7 @@ main {
   color: #9F9A91;
 }
 .listContent input[type=checkbox]:checked + label::before {
-  content: url("/img/checkYellow.png");
+  content: url("../img/checkYellow.png");
   border: 1px solid transparent;
   transform: translateY(-80%);
 }
@@ -462,6 +462,7 @@ main {
   display: inline-block;
   line-height: 24px;
   vertical-align: middle;
+  word-wrap: break-word;
 }
 
 .list .update {
@@ -488,7 +489,7 @@ main {
   display: none;
 }
 .list .delete {
-  background: url("/img/cross.png");
+  background: url("../img/cross.png");
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
@@ -536,4 +537,4 @@ main {
 
 .show {
   display: block;
-}/*# sourceMappingURL=Todo_All.css.map */
+}/*# sourceMappingURL=all.css.map */

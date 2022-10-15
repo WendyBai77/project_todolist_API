@@ -35,7 +35,7 @@ if (sitePath.includes("index")) {
     PWD.addEventListener("keyup", checkPWD);
     PWDAgain.addEventListener("keyup", checkPWDAgain);
 }
-// 當前頁面為[todolist內頁](location.pathname為/Todo_main.html)
+// 當前頁面為[todolist內頁](location.pathname為"/project_todolist_API/main.html")
 else {
     //顯示暱稱。使用getItem 把存進去的字串用key名"nickName"取出來。
     const headerNickName = document.querySelector("header h2");
@@ -158,7 +158,7 @@ function loginRegister(e) {
                 title: res.data.message,
                 text: `${res.data.nickname}，你好！`
             })
-                .then(() => window.location = "project_todolist_API/Todo_main.html");
+                .then(() => window.location = "/main.html");
             // console.log(token);
         })
         .catch((error) => {
@@ -187,7 +187,7 @@ function logout() {
         }).then(() => {
             //將storage 中的所有屬性移除。
             localStorage.clear();
-            window.location = "project_todolist_API/Todo_index.html";
+            window.location = "/index.html";
         })
 
     }).catch((error) => {
@@ -226,7 +226,7 @@ function requestData() {
                 icon: 'warning',
                 title: error.response.data.message,
                 text: '轉至登入頁面'
-            }).then(() => window.location = "project_todolist_API/Todo_index.html");
+            }).then(() => window.location = "/index.html");
         })
 }
 // 渲染資料
