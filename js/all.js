@@ -352,7 +352,6 @@ function itemStatus(e) {
         index = listData.findIndex(i => i.id === e.target.previousSibling.previousSibling.htmlFor);
         console.log('index', index);
         listData.splice(index, 1);
-        render(listData);
 
         axios.delete(url, {
             headers: {
@@ -362,6 +361,7 @@ function itemStatus(e) {
             .then((res) => {
                 // 刪除單筆，不特別跳窗顯示通知使用者
                 console.log("itemStatus_delete", res);
+                render(listData);
                 // Swal.fire({
                 //     icon: 'success',
                 //     title: `單筆待辦${res.data.message}`
@@ -433,7 +433,6 @@ function itemStatus(e) {
         // console.log('listData[index].completed_at === null的布林值:', listData[index].completed_at === null)
         listData[index].completed_at = (listData[index].completed_at === null) ? "checked_but_not_synced" : null;
         console.log('listData[index].completed_at的值:', listData[index].completed_at)
-        // render(listData);
         //因patch本身預設要帶data進去，但此api不用帶值，所以必須帶一個空物件。
         axios.patch(url, {}, {
             headers: {
