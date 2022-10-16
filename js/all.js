@@ -28,7 +28,7 @@ const tabArea = document.querySelector(".listArea .tab");
 
 //判斷頁面+監聽事件
 // 當前頁面為[登入頁](註冊頁同頁做切換)。 .includes()可回傳是否包含該元素的布林值
-if (sitePath.includes("index") || sitePath.includes("/project_todolist_API")) {
+if (!sitePath.includes("main")){
     console.log('sitePath_location.pathname',sitePath);
     console.log('sitePath.includes("/project_todolist_API")',sitePath.includes("/project_todolist_API"));
     change_a.addEventListener("click", changeText);
