@@ -28,8 +28,9 @@ const tabArea = document.querySelector(".listArea .tab");
 
 //判斷頁面+監聽事件
 // 當前頁面為[登入頁](註冊頁同頁做切換)。 .includes()可回傳是否包含該元素的布林值
-if (sitePath.includes("index")) {
+if (sitePath.includes("index") || sitePath.includes("/project_todolist_API")) {
     console.log('sitePath_location.pathname',sitePath);
+    console.log('sitePath.includes("/project_todolist_API")',sitePath.includes("/project_todolist_API"));
     change_a.addEventListener("click", changeText);
     form.addEventListener("submit", loginRegister);
     PWD.addEventListener("keyup", checkPWD);
@@ -159,8 +160,7 @@ function loginRegister(e) {
                 icon: 'success',
                 title: res.data.message,
                 text: `${res.data.nickname}，你好！`
-            })
-                .then(() => window.location = "/project_todolist_API/main.html");
+            }).then(() => window.location = "/project_todolist_API/main.html");
             // console.log(token);
         })
         .catch((error) => {
@@ -228,7 +228,7 @@ function requestData() {
                 icon: 'warning',
                 title: error.response.data.message,
                 text: '轉至登入頁面'
-            }).then(() => window.location = "/project_todolist_API/index.html");
+            })  .then(() => window.location = "/project_todolist_API/index.html");
         })
 }
 // 渲染資料
