@@ -37,7 +37,7 @@ if (!sitePath.includes("main")){
     PWDAgain.addEventListener("keyup", checkPWDAgain);
 }
 // 當前頁面為[todolist內頁](location.pathname為"/main.html")
-else {
+else if(sitePath.includes("main")) {
     console.log('sitePath_location.pathname',sitePath);
     //顯示暱稱。使用getItem 把存進去的字串用key名"nickName"取出來。
     const headerNickName = document.querySelector("header h2");
