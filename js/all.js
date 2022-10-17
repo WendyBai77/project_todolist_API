@@ -428,7 +428,7 @@ function itemStatus(e) {
     //單筆資料更新_切換狀態
     if (e.target.nodeName === "LABEL") {
         url = `${domain}/todos/${e.target.htmlFor}/toggle`;
-        console.log('listData', listData);
+        // console.log('listData', listData);
         // console.log('e.target.htmlFor', e.target.htmlFor);
         index = listData.findIndex(i => i.id === e.target.htmlFor);
         // console.log('listData[index].completed_at === null的布林值:', listData[index].completed_at === null)
