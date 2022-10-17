@@ -29,7 +29,7 @@ const tabArea = document.querySelector(".listArea .tab");
 //判斷頁面+監聽事件
 // 當前頁面為[登入頁](註冊頁同頁做切換)。 .includes()可回傳是否包含該元素的布林值
 if (!sitePath.includes("main")){
-    console.log('sitePath_location.pathname',sitePath);
+    // console.log('sitePath_location.pathname',sitePath);
     change_a.addEventListener("click", changeText);
     form.addEventListener("submit", loginRegister);
     PWD.addEventListener("keyup", checkPWD);
@@ -37,7 +37,7 @@ if (!sitePath.includes("main")){
 }
 // 當前頁面為[todolist內頁](location.pathname為"/main.html")
 else if(sitePath.includes("main")) {
-    console.log('sitePath_location.pathname',sitePath);
+    // console.log('sitePath_location.pathname',sitePath);
     //顯示暱稱。使用getItem 把存進去的字串用key名"nickName"取出來。
     const headerNickName = document.querySelector("header h2");
     headerNickName.textContent = `${localStorage.getItem("nickName")}的待辦`;
@@ -148,7 +148,7 @@ function loginRegister(e) {
     }
     axios.post(url, APIData)
         .then((res) => {
-            console.log(res);
+            // console.log(res);
             let token = res.headers.authorization;
             let nickName = res.data.nickname;
 
@@ -163,7 +163,7 @@ function loginRegister(e) {
             // console.log(token);
         })
         .catch((error) => {
-            console.log(error);
+            // console.log(error);
             Swal.fire({
                 icon: 'error',
                 title: error.response.data.message,
@@ -261,7 +261,7 @@ function render(data) {
             case "undo":
                 // 根據completed_at，判斷狀態在未完成(null)或已完成(顯示時間)。 
                 tempList = data.filter(i => i.completed_at == null);
-                console.log(tempList);
+                // console.log(tempList);
                 tabArea.children[1].classList.add("active");
                 break;
             case "done":
@@ -279,7 +279,7 @@ function render(data) {
             listText += `<li><input type="checkbox" id="${i.id}" ${checked}><label for="${i.id}"><span id="${i.id}_input">${i.content}</span></label><button type="button" class="update">編輯</button><button type="button" class="delete"></button></li>`
         });
         list.innerHTML = listText;
-        console.log('渲染資料render(data)', data);
+        // console.log('渲染資料render(data)', data);
         countRemain(data);
     }
 }
@@ -313,7 +313,7 @@ function addListItem(e) {
             }
         })
             .then((res) => {
-                console.log("新增待辦 res.data", res.data);
+                // console.log("新增待辦 res.data", res.data);
                 // 宣告newData放入整理好的資料，再將新增的資料放在陣列(listData)裡的第一筆
                 let newData = {
                     id: res.data.id,
@@ -342,16 +342,16 @@ function addListItem(e) {
 
 //單筆資料更新(切換狀態/編輯修改/刪除)
 function itemStatus(e) {
-    console.log(e.target);
+    // console.log(e.target);
     // 單筆資料更新_刪除單筆
     let index = "";
     // classList.contains 用來檢查是否存在某 class，回傳 boolean 值。
     if (e.target.classList.contains("delete")) {
         url = `${domain}/todos/${e.target.previousSibling.previousSibling.htmlFor}`;
-        console.log('e.target.previousSibling.previousSibling.htmlFor', e.target.previousSibling.previousSibling.htmlFor);
-        console.log('listData', listData);
+        // console.log('e.target.previousSibling.previousSibling.htmlFor', e.target.previousSibling.previousSibling.htmlFor);
+        // console.log('listData', listData);
         index = listData.findIndex(i => i.id === e.target.previousSibling.previousSibling.htmlFor);
-        console.log('index', index);
+        // console.log('index', index);
         listData.splice(index, 1);
 
         axios.delete(url, {
@@ -361,7 +361,7 @@ function itemStatus(e) {
         })
             .then((res) => {
                 // 刪除單筆，不特別跳窗顯示通知使用者
-                console.log("itemStatus_delete", res);
+                // console.log("itemStatus_delete", res);
                 render(listData);
                 // Swal.fire({
                 //     icon: 'success',
@@ -369,7 +369,7 @@ function itemStatus(e) {
                 // })
             })
             .catch((error) => {
-                console.log("itemStatus_delete", error.response);
+                // console.log("itemStatus_delete", error.response);
                 let reason = error.response.data.error ? error.response.data.error : "";
                 alert(error.response.data.message + "" + reason)
             })
@@ -377,12 +377,12 @@ function itemStatus(e) {
 
     // 單筆資料更新_編輯(修改)todo
     if (e.target.classList.contains("update")) {
-        console.log('listData', listData);
+        // console.log('listData', listData);
         index = listData.findIndex(i => i.id === e.target.previousSibling.htmlFor);
-        console.log('listData[index]', listData[index]);
+        // console.log('listData[index]', listData[index]);
         // querySelectorAll("span")[index] 取得<span> 索引值「第n個」符合條件的元素
         const updateData = document.querySelectorAll("span")[index];
-        console.log('updateData(("span")[index])', updateData);
+        // console.log('updateData(("span")[index])', updateData);
         //宣告updateText，組出新增todo的html結構。updateData.innerHTML再動態覆蓋至<span>該索引值
         updateText = `<input name="updateTextOk" class="input_ok" type="input" value="${listData[index].content}"><button type="button" class="update_ok">送出</button>`;
         updateData.innerHTML = updateText;
@@ -392,9 +392,9 @@ function itemStatus(e) {
     }
     //單筆資料更新_編輯(修改)todo > 編輯送出
     if (e.target.classList.contains("update_ok")) {
-        console.log('listData', listData);
+        // console.log('listData', listData);
         index = listData.findIndex(i => i.id === e.target.parentNode.parentNode.htmlFor);
-        console.log('listData[index]', listData[index]);
+        // console.log('listData[index]', listData[index]);
         const todoId = listData[index].id;
         // 透過DOM選取到"編輯todo input"，再將值賦予給todo待辦事項
         const todo = document.querySelector(".listContent input[name='updateTextOk']").value.trim();
@@ -416,10 +416,10 @@ function itemStatus(e) {
                 listData[index].content = todo;
                 render(listData);
                 // 編輯todo，不特別跳窗顯示通知使用者
-                console.log("updateTodo", res);
+                // console.log("updateTodo", res);
             })
             .catch((error) => {
-                console.log("updateTodo", error.response);
+                // console.log("updateTodo", error.response);
                 let reason = error.response.data.error ? error.response.data.error : "";
                 alert(error.response.data.message + "" + reason)
             });
@@ -433,7 +433,7 @@ function itemStatus(e) {
         index = listData.findIndex(i => i.id === e.target.htmlFor);
         // console.log('listData[index].completed_at === null的布林值:', listData[index].completed_at === null)
         listData[index].completed_at = (listData[index].completed_at === null) ? "checked_but_not_synced" : null;
-        console.log('listData[index].completed_at的值:', listData[index].completed_at)
+        // console.log('listData[index].completed_at的值:', listData[index].completed_at)
         //因patch本身預設要帶data進去，但此api不用帶值，所以必須帶一個空物件。
         axios.patch(url, {}, {
             headers: {
@@ -442,13 +442,13 @@ function itemStatus(e) {
         })
             .then((res) => {
                 // 更改狀態，不特別跳窗顯示通知使用者
-                console.log("itemStatus_toggle", res);
+                // console.log("itemStatus_toggle", res);
                 // 將已完成todo勾選時間，更新至listData
                 listData[index].completed_at = res.data.completed_at;
                 render(listData);
             })
             .catch((error) => {
-                console.log("itemStatus_toggle", error.response);
+                // console.log("itemStatus_toggle", error.response);
                 let reason = error.response.data.error ? error.response.data.error : "";
                 alert(error.response.data.message + "" + reason)
             })
@@ -457,11 +457,11 @@ function itemStatus(e) {
 
 //刪除所有已完成
 function deleteAll(e){
-    // 篩選出需要刪除的項目，並且回傳給Todo刪除api(避免資料庫沒成功刪除)
+    // 篩選出狀態"已完成"需要刪除的項目，並且回傳給Todo刪除api(避免資料庫沒成功刪除)
     let needDelete=[];
     needDelete = listData.map(function(item){
         if (item.completed_at !== null){
-            console.log('已完成狀態 item.completed_at',item.completed_at);
+            // console.log('已完成狀態 item.completed_at',item.completed_at);
             url = `${domain}/todos/${item.id}`
             return axios.delete(url, {
                 headers: {
@@ -485,7 +485,7 @@ function deleteAll(e){
     // Promise.all透過「陣列的形式」傳入多個 promise 函式。多個 Promise 行為同時執行，全部完成後統一回傳。
     Promise.all(needDelete)
     .then((res) => {
-        console.log("deleteAll", res);
+        // console.log("deleteAll", res);
         Swal.fire({
             icon: 'success',
             title: '刪除完成',
