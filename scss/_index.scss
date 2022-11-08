@@ -12,7 +12,7 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
 
     @include mobile {
         flex-direction: column;
@@ -62,6 +62,7 @@ section.login {
     margin-left: 8.2%;
     max-width: 304px;
     flex: 1 0 auto;
+
     h2 {
         font-size: 24px;
         margin-bottom: 24px;
@@ -69,8 +70,9 @@ section.login {
 
     label {
         margin-bottom: 4px;
+
         //label文字_暱稱、再次輸入密碼(登入頁隱藏)
-        &:nth-of-type(2n){
+        &:nth-of-type(2n) {
             display: none;
         }
     }
@@ -78,21 +80,25 @@ section.login {
     input {
         width: 100%;
         margin-bottom: 40px;
+
         // index為登入頁，密碼下推取消
         &:nth-of-type(3) {
             margin-bottom: 0;
         }
+
         //input_暱稱、再次輸入密碼(登入頁隱藏)
-        &:nth-of-type(2n){
+        &:nth-of-type(2n) {
             display: none;
         }
     }
+
     // 密碼提示、再次輸入密碼字數提示(隱藏)
-    p{
+    p {
         // margin-bottom: 16px;
         color: #D87355;
         height: 20px;
-        &:nth-of-type(2n){
+
+        &:nth-of-type(2n) {
             display: none;
         }
     }
@@ -108,8 +114,9 @@ section.login {
         width: fit-content;
         margin: 0 auto;
         // 加上 border-bottom: 1px solid transparent; 消除active產生的跳動
-        border-bottom: 1px solid transparent; 
-        &:active{
+        border-bottom: 1px solid transparent;
+
+        &:active {
             border-bottom: 1px solid $black;
         }
     }
@@ -117,45 +124,62 @@ section.login {
     @include mobile {
         max-width: 100%;
         margin-left: 0;
+
         h2 {
             text-align: center;
             font-size: 20px;
             margin-bottom: 32px;
         }
+
         button {
             margin: 27px auto 10px;
         }
     }
 }
-section.register{
+
+section.register {
+
     //label文字_暱稱、再次輸入密碼(註冊頁顯示)
-    label{
-        &:nth-of-type(2n){
+    label {
+        &:nth-of-type(2n) {
             display: block;
         }
     }
-    input{
+
+    input {
         margin-bottom: 16px;
+
         //input_密碼、再次輸入密碼下推取消
-        &:nth-of-type(3), &:nth-of-type(4){
+        &:nth-of-type(3),
+        &:nth-of-type(4) {
             margin-bottom: 0;
         }
+
         //input_暱稱、再次輸入密碼(註冊頁顯示)
-        &:nth-of-type(2n){
+        &:nth-of-type(2n) {
             display: block;
         }
     }
+
     // 密碼提示、再次輸入密碼字數提示(顯示)
-    p{
+    p {
         margin-bottom: 0;
         height: 16px;
-        &:nth-of-type(2n){
+
+        &:nth-of-type(2n) {
             display: block;
         }
     }
-    @include mobile{
-        h2{
+
+    @include mobile {
+        h2 {
             font-size: 24px;
         }
+    }
+}
+
+.login{
+    form{
+        margin: 0% 3%;
     }
 }

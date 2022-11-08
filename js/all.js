@@ -453,6 +453,29 @@ function itemStatus(e) {
                 alert(error.response.data.message + "" + reason)
             })
     }
+    else if(e.target.nodeName === "SPAN"){
+        url = `${domain}/todos/${e.target.parentNode.htmlFor}/toggle`;
+        index = listData.findIndex(i => i.id === e.target.parentNode.htmlFor);
+        listData[index].completed_at = (listData[index].completed_at === null) ? "checked_but_not_synced" : null;
+        //因patch本身預設要帶data進去，但此api不用帶值，所以必須帶一個空物件。
+        axios.patch(url, {}, {
+            headers: {
+                Authorization: localStorage.getItem("token")
+            }
+        })
+            .then((res) => {
+                // 更改狀態，不特別跳窗顯示通知使用者
+                // console.log("itemStatus_toggle", res);
+                // 將已完成todo勾選時間，更新至listData
+                listData[index].completed_at = res.data.completed_at;
+                render(listData);
+            })
+            .catch((error) => {
+                // console.log("itemStatus_toggle", error.response);
+                let reason = error.response.data.error ? error.response.data.error : "";
+                alert(error.response.data.message + "" + reason)
+            })
+    }
 }
 
 //刪除所有已完成
@@ -470,10 +493,6 @@ function deleteAll(e){
             })
         }
     })
-
-    // 篩選出需要刪除的項目，執行成功顯示刪除"已完成"項目
-    needDelete = listData.filter( i => i.completed_at !== null);
-    // console.log('已完成todo_needDelete',needDelete);
 
     // 篩選出"待完成"項目，再賦予值給listData
     listData = listData.filter(i => i.completed_at===null);
