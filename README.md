@@ -5,6 +5,7 @@ Todo List Practice
 ---
 
 ### Demo
+![](https://imgur.com/VIKaosS.gif)
 
 ---
 ### 使用說明
@@ -19,5 +20,7 @@ Todo List Practice
 - 串接Todo List API，設計登入/登出/註冊/新增/修改/刪除、切換狀態功能。
 - 使用「正規式」（Regular expressions）進行註冊、登入時的字串比對。
 - 使用localStorage，將網頁中的資料儲存在使用者的瀏覽器中。
+- Promise.all透過「陣列的形式」傳入多個 promise 函式。多個 Promise 行為同時執行，全部完成後統一回傳。
+- location.pathname 返回當前頁面的路徑和文件名
 - 使用響應式網頁設計，並導入SASS/SCSS
 - 三元運算子
