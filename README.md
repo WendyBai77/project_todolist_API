@@ -5,7 +5,8 @@ Todo List Practice
 ---
 
 ### Demo
-![](https://i.imgur.com/CzzwU1L.gif)
+
+![](https://github.com/WendyBai77/project_todolist_API/blob/main/Demo.gif)
 
 ---
 ### 使用說明
