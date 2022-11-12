@@ -5,7 +5,7 @@ Todo List Practice
 ---
 
 ### Demo
-![](https://i.imgur.com/VIKaosS.mp4)
+![](https://i.imgur.com/CzzwU1L.gif)
 
 ---
 ### 使用說明
